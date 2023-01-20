@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Schlumberger Hackathon Prototype</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  <body>
+    
+    <div class="header-ctn">
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+              <span class="navbar-brand mb-0 h1">Schlumberger Hackathon Prototype</span>
+            </div>
+          </nav>
+    </div>
+
+    <div class="main-ctn">
+        <div class="d-flex flex-column justify-content-center align-items-center mt-4">
+        <div class="card d-flex p-2" style="width: 50%">
+        <div class="card-body">
+        <form method="post">
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Enter your query below ?</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" value="{{ request.form['query'] }}" name="query"></textarea>
+          </div>
+          <button type="submit" class="btn btn-outline-primary" id="searchBtn">Search</button>
+        </form>
+        </div>
+        </div>
+        <div class="mt-4">
+            <div class="alert alert-info" role="alert">
+                Not sure what to ask ? Here are some suggestions 
+              </div>
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                  <div class="card border-success mb-3 p-2" >
+                    <div class="card-body">
+                      <form method="post">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" value="{{ request.form['query'] }}" name="query" readonly style="border:0;resize:none">How can the CO2 be captured?</textarea>
+                      <button type="submit" class="btn btn-outline-primary">Search</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card border-success mb-3 p-2">
+                    <div class="card-body">
+                      <form method="post">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" value="{{ request.form['query'] }}" name="query" readonly style="border:0;resize:none">What is the success rate of CCS?</textarea>
+                      <button type="submit" class="btn btn-outline-primary">Search</button>
+                      </form>
+                  </div>
+                </div>
+            </div>
+                <div class="col">
+                  <div class="card border-success mb-3 p-2">
+                    <div class="card-body">
+                      <form method="post">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" value="{{ request.form['query'] }}" name="query" readonly style="border:0;resize:none">What is the aim of CCS?</textarea>
+                      <button type="submit" class="btn btn-outline-primary">Search</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card border-success mb-3 p-2">
+                    <div class="card-body">
+                      <form method="post">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" value="{{ request.form['query'] }}" name="query" readonly style="border:0;resize:none">What does climate benefits associated with a given CO2 use depend on?</textarea>
+                      <button type="submit" class="btn btn-outline-primary">Search</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="footer-ctn">
+
+    </div>
+    <script src="{{url_for('static', filename='app.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>
